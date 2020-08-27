@@ -18,7 +18,8 @@ This is the list of examples:
 
 **Compute - Amazon EC2:**
 
-
+* [awsec2instances](/awsec2instances) - AWS EC2 instances: Example of how to handle AWS EC2 instances.
+  
 **Compute - AWS Lambda:**
 
 
