@@ -66,7 +66,10 @@ public class LambdaInvoke {
                     "response for some reason.");
             System.out.println("Error Message:     " + ase.getMessage());
             System.out.println("HTTP Status Code:  " + ase.statusCode());
-            System.out.println("AWS Error Details: " + ase.awsErrorDetails());
+            System.out.println("AWS Service Name:  " + ase.awsErrorDetails().serviceName());
+            System.out.println("AWS Error Code:    " + ase.awsErrorDetails().errorCode());
+            System.out.println("AWS Error Message: " + ase.awsErrorDetails().errorMessage());
+            System.out.println("Request ID:        " + ase.requestId());
         } catch (SdkException se) {
             System.out.println("Caught an SdkException, " +
                     "which means the client encountered " +
