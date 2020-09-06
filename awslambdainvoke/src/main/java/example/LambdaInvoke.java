@@ -19,7 +19,7 @@ import software.amazon.awssdk.services.lambda.model.ServiceException;
 
 public class LambdaInvoke {
 
-    private static final Region REGION = Region.of("eu-west-1");;      // Region name
+    private static final Region REGION = Region.of("eu-west-1");      // Region name
 
     public static void main(String[] args) throws IOException {
 
@@ -56,6 +56,7 @@ public class LambdaInvoke {
 
             //write out the response
             System.out.println("Lambda return value: " + value);
+            System.out.println("Lambda status code: " + res.statusCode());
 
         } catch (ServiceException e) {
             System.out.println("ServiceException: " + e);
@@ -78,7 +79,5 @@ public class LambdaInvoke {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
-
-        System.out.println("Lambda status code: " + res.statusCode());
     }
 }
