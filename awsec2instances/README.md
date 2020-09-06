@@ -6,7 +6,11 @@ This folder contains a Java application example that handles EC2 instances on AW
 
 * You must have an [Amazon Web Services (AWS)](http://aws.amazon.com/) account.
 
-* The code was written for Java 8 and AWS SDK for Java 2.x.
+* The code was written for:
+ 
+  *  Java 8
+  *  Apache Maven (> 3.0)
+  *  AWS SDK for Java 2.x
 
 ## Using the code
 

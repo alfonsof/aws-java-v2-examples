@@ -27,6 +27,7 @@ This is the list of examples:
 * [awslambdahello](/awslambdahello) - AWS Lambda Function Hello World: Example of how to handle an AWS simple Lambda function and a text input.
 * [awslambdahellojson](/awslambdahellojson) - AWS Lambda Function Hello World JSON: Example of how to handle an AWS simple Lambda  function and a JSON input, using classes for Request and Response.
 * [awslambdainvoke](/awslambdainvoke) - AWS Lambda Function Invoke: Example of how to handle an AWS Lambda function and invoke it.
+* [awslambdadelete](/awslambdadelete) - AWS Lambda Function Delete: Example of how to handle an AWS Lambda function and delete it.
 
 **Storage - Amazon S3:**
 

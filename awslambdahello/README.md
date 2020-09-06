@@ -8,7 +8,11 @@ It handles a simple AWS Lambda function that shows the content (text) of the cal
 
 * You must have an [Amazon Web Services (AWS)](http://aws.amazon.com/) account.
 
-* The code was written for Java 8 and AWS SDK for Java 1.x.
+* The code was written for:
+ 
+  *  Java 8
+  *  Apache Maven (> 3.0)
+  *  AWS SDK for Java 1.x
 
 ## Using the code
 

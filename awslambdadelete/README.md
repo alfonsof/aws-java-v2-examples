@@ -12,7 +12,7 @@ Delete a Lambda function.
  
   *  Java 8
   *  Apache Maven (> 3.0)
-  *  AWS SDK for Java 2.x.
+  *  AWS SDK for Java 2.x
 
 ## Using the code
 
