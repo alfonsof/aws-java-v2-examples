@@ -33,6 +33,7 @@ This is the list of examples:
 
 **Storage - Amazon S3:**
 
+* [awss3create](/awss3create) - AWS S3 Create: Example of how to handle S3 buckets and create a new S3 bucket.
 
 ## License
 
