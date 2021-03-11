@@ -1,4 +1,4 @@
-# Java examples on AWS (Amazon Web Services)
+# Java examples on AWS (Amazon Web Services) - SDK V2
 
 This repo contains Java code examples on AWS (Amazon Web Services).
 
