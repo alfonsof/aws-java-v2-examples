@@ -67,8 +67,8 @@ public class S3Create {
             if (e.statusCode() == 409) {
                 System.out.println("Error: Bucket already exists!!");
             } else {
-                System.out.println("HTTP Status Code:  " + e.statusCode());
                 System.out.println("S3Exception: " + e);
+                System.out.println("HTTP Status Code:  " + e.statusCode());
             }
         } catch (AwsServiceException ase) {
             System.out.println("Caught an AwsServiceException, " +
