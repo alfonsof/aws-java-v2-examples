@@ -12,7 +12,7 @@ List information of a Lambda function.
  
   *  Java 8
   *  Apache Maven (> 3.0)
-  *  AWS SDK for Java 2.x
+  *  AWS SDK for Java (SDK V2)
 
 ## Using the code
 
