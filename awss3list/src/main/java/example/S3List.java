@@ -58,7 +58,6 @@ public class S3List {
                         " (owner = " + myValue.owner());
             }
             System.out.println("Listed");
-            s3client.close();
 
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
@@ -86,5 +85,6 @@ public class S3List {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + ace.getMessage());
         }
+        s3client.close();
     }
 }
