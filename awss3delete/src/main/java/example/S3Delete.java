@@ -40,7 +40,6 @@ public class S3Delete {
             // Delete bucket
             DeleteBucketRequest deleteBucketRequest = DeleteBucketRequest.builder().bucket(bucketName).build();
             s3client.deleteBucket(deleteBucketRequest);
-            s3client.close();
             System.out.println("Deleted");
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
@@ -70,5 +69,6 @@ public class S3Delete {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
+        s3client.close();
     }
 }
