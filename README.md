@@ -38,7 +38,7 @@ This is the list of examples:
 * [awss3list](/awss3list) - AWS S3 List: Example of how to handle S3 buckets and list information about the objects in a S3 bucket.
 * [awss3listall](/awss3listall) - AWS S3 List All: Example of how to handle S3 buckets and list information about all S3 buckets and the objects that they contain.
 * [awss3upload](/awss3upload) - AWS S3 Upload: Example of how to handle S3 buckets and upload a local file to a S3 bucket.
-* 
+
 ## License
 
 This code is released under the MIT License. See LICENSE file.
