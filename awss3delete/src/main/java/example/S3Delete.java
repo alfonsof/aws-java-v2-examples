@@ -10,11 +10,10 @@ package example;
 import java.io.IOException;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
-import software.amazon.awssdk.core.waiters.WaiterResponse;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
-import software.amazon.awssdk.services.s3.model.*;
-import software.amazon.awssdk.services.s3.waiters.S3Waiter;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.services.s3.model.DeleteBucketRequest;
 
 public class S3Delete {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
@@ -46,6 +45,8 @@ public class S3Delete {
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
                 System.out.println("Error: Bucket does not exist!!");
+            }else if (e.statusCode() == 409) {
+                System.out.println("Error: The bucket you tried to delete is not empty!!");
             } else {
                 System.out.println("S3Exception: " + e);
                 System.out.println("HTTP Status Code:  " + e.statusCode());
