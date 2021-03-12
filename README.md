@@ -35,6 +35,8 @@ This is the list of examples:
 
 * [awss3create](/awss3create) - AWS S3 Create: Example of how to handle S3 buckets and create a new S3 bucket.
 * [awss3delete](/awss3delete) - AWS S3 Delete: Example of how to handle S3 buckets and delete a S3 bucket.
+* [awss3list](/awss3list) - AWS S3 List: Example of how to handle S3 buckets and list information about the objects in a S3 bucket.
+* [awss3listall](/awss3listall) - AWS S3 List All: Example of how to handle S3 buckets and list information about all S3 buckets and the objects that they contain.
 
 ## License
 
