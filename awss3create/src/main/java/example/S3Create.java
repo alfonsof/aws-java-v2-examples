@@ -89,5 +89,6 @@ public class S3Create {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
+        s3client.close();
     }
 }
