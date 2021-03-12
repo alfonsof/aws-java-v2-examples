@@ -78,5 +78,6 @@ public class S3ListAll {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + ace.getMessage());
         }
+        s3client.close();
     }
 }
