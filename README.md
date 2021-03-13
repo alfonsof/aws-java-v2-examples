@@ -39,6 +39,7 @@ This is the list of examples:
 * [awss3listall](/awss3listall) - AWS S3 List All: Example of how to handle S3 buckets and list information about all S3 buckets and the objects that they contain.
 * [awss3upload](/awss3upload) - AWS S3 Upload: Example of how to handle S3 buckets and upload a local file to a S3 bucket.
 * [awss3download](/awss3download) - AWS S3 Download: Example of how to handle S3 buckets and download an object from a S3 bucket to a local file.
+* [awss3deleteobject](/awss3deleteobject) - AWS S3 Delete Object: Example of how to handle S3 buckets and delete an object in a S3 bucket.
 
 ## License
 
