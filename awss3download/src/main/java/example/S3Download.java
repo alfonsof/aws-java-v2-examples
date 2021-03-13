@@ -70,7 +70,7 @@ public class S3Download {
 
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
-                System.out.println("Error: Bucket / Object does NOT exists!!");
+                System.out.println("Error: Bucket/Object \"" + bucketName + "/" + keyName + "\" does not exist!!");
                 System.out.println("S3Exception: " + e);
             } else {
                 System.out.println("S3Exception: " + e);
