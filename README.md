@@ -40,6 +40,8 @@ This is the list of examples:
 * [awss3upload](/awss3upload) - AWS S3 Upload: Example of how to handle S3 buckets and upload a local file to a S3 bucket.
 * [awss3download](/awss3download) - AWS S3 Download: Example of how to handle S3 buckets and download an object from a S3 bucket to a local file.
 * [awss3deleteobject](/awss3deleteobject) - AWS S3 Delete Object: Example of how to handle S3 buckets and delete an object in a S3 bucket.
+* [awss3copy](/awss3copy) - AWS S3 Copy: Example of how to handle S3 buckets and copy an object from a S3 bucket to another S3 bucket.
+* [awss3move](/awss3move) - AWS S3 Move: Example of how to handle S3 buckets and move an object from a S3 bucket to another S3 bucket.
 
 ## License
 
