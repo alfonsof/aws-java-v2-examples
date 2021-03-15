@@ -12,7 +12,7 @@ It handles a simple AWS Lambda function that shows the content (text) of the cal
  
   *  Java 8
   *  Apache Maven (> 3.0)
-  *  AWS SDK for Java (SDK V1)
+  *  AWS Lambda Java Core Library
 
 ## Using the code
 
