@@ -59,8 +59,14 @@ It handles a simple AWS Lambda function that shows the content (text) of the cal
 
 * Test the AWS Lambda function.
 
-  You should see the next message in the log:
+  You should see the next message in the return:
 
   ```bash
   "Hello Peter."
+  ```
+
+  You should see the next message in the log:
+
+  ```bash
+  "Name: Peter"
   ```
