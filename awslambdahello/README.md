@@ -11,8 +11,9 @@ It handles a simple AWS Lambda function that shows the content (text) of the cal
 * The code was written for:
  
   *  Java 8
-  *  Apache Maven (> 3.0)
-  *  AWS Lambda Java Core Library
+  *  Apache Maven 3
+  *  AWS Java Lambda Support Libraries:
+     *  AWS Lambda Java Core Library
 
 ## Using the code
 

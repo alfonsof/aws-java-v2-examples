@@ -11,7 +11,7 @@ List information about all S3 buckets and the objects that they contain.
 * The code was written for:
  
   *  Java 8
-  *  Apache Maven (> 3.0)
+  *  Apache Maven 3
   *  AWS SDK for Java (SDK V2)
 
 ## Using the code
