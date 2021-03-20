@@ -5,7 +5,6 @@
 
 package example;
 
-import java.io.IOException;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.regions.Region;
@@ -16,17 +15,19 @@ import software.amazon.awssdk.services.lambda.model.ServiceException;
 import java.util.Iterator;
 import java.util.List;
 
+
 public class LambdaListAll {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        ListFunctionsResponse functionResult = null ;
+        LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
 
         try {
-            LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
+            System.out.println("Listing Lambda functions ...");
 
             //Get a list of all functions
+            ListFunctionsResponse functionResult = null ;
             functionResult = awsLambda.listFunctions();
 
             List<FunctionConfiguration> list = functionResult.functions();
@@ -68,5 +69,6 @@ public class LambdaListAll {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
+        awsLambda.close();
     }
 }
