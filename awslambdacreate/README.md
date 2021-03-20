@@ -82,18 +82,6 @@ Create an AWS Lambda function.
   java -jar awslambdacreate.jar lambda-name lambda-file lambda-role lambda-handler
   ```
 
-  You can use as name of the Lambda function 2 name formats:
-  
-  * Function name
-    
-    Ex.: `HelloJsonJava`
-
-  * Function ARN
-  
-    Ex.: `arn:aws:lambda:eu-west-1:123456789012:function:HelloJsonJava`
-  
-    You can retrieve the function ARN by looking at the function in the AWS Console.
-
   You must use as a function role the ARN.
 
   Ex.: `arn:aws:iam::123456789012:role/service-role/lambda-basic-execution`
