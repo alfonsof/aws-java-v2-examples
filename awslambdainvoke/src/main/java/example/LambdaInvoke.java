@@ -7,24 +7,25 @@
 
 package example;
 
-import java.io.IOException;
+import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.services.lambda.LambdaClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.lambda.model.InvokeRequest;
-import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.services.lambda.model.InvokeResponse;
 import software.amazon.awssdk.services.lambda.model.ServiceException;
+
 
 public class LambdaInvoke {
 
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         if (args.length < 1) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar lambdainvoke.jar <FUNCTION_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar lambdainvoke.jar <FUNCTION_NAME>");
             System.exit(1);
         }
 
@@ -32,9 +33,10 @@ public class LambdaInvoke {
 
         System.out.println("Lambda function name: " + functionName);
 
-        InvokeResponse res = null ;
+        LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
+
         try {
-            LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
+            System.out.println("Invoking Lambda function ...");
 
             //Need a SdkBytes instance for the payload
             SdkBytes payload = SdkBytes.fromUtf8String("{\n" +
@@ -49,6 +51,7 @@ public class LambdaInvoke {
                     .build();
 
             //Invoke the Lambda function
+            InvokeResponse res = null ;
             res = awsLambda.invoke(request);
 
             //Get the response
@@ -79,5 +82,6 @@ public class LambdaInvoke {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
+        awsLambda.close();
     }
 }
