@@ -2,7 +2,7 @@
 
 This folder contains a Java application example that handles Lambda functions on AWS (Amazon Web Services).
 
-Invoke a Lambda function.
+Invoke an AWS Lambda function.
 
 ## Requirements
 

@@ -2,7 +2,7 @@
 
 This folder contains a Java application example that handles Lambda functions on AWS (Amazon Web Services).
 
-Delete a Lambda function.
+Delete an AWS Lambda function.
 
 ## Requirements
 
