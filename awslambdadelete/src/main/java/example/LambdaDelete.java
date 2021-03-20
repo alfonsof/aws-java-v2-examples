@@ -7,7 +7,6 @@
 
 package example;
 
-import java.io.IOException;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.services.lambda.LambdaClient;
@@ -18,10 +17,11 @@ import software.amazon.awssdk.services.lambda.model.ServiceException;
 public class LambdaDelete {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         if (args.length < 1) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar lambdadelete.jar <FUNCTION_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar lambdadelete.jar <FUNCTION_NAME>");
             System.exit(1);
         }
 
@@ -29,17 +29,20 @@ public class LambdaDelete {
 
         System.out.println("Lambda function name: " + functionName);
 
-        try {
-            LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
+        LambdaClient awsLambda = LambdaClient.builder().region(REGION).build();
 
-            //Setup an DeleteFunctionRequest
+        try {
+            System.out.println("Deleting Lambda function ...");
+
+            // Setup an DeleteFunctionRequest
             DeleteFunctionRequest request = DeleteFunctionRequest.builder()
                     .functionName(functionName)
                     .build();
 
-            //Invoke the Lambda deleteFunction method
+            // Invoke the Lambda deleteFunction method
             awsLambda.deleteFunction(request);
-            System.out.println("The Lambda function is deleted");
+            
+            System.out.println("Deleted");
 
         } catch (ServiceException e) {
             System.out.println("ServiceException: " + e);
@@ -62,5 +65,6 @@ public class LambdaDelete {
                     "such as not being able to access the network.");
             System.out.println("Error Message: " + se.getMessage());
         }
+        awsLambda.close();
     }
 }
