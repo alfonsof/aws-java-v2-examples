@@ -9,7 +9,6 @@
 
 package example;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -21,17 +20,20 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.CopyObjectRequest;
 import software.amazon.awssdk.services.s3.model.CopyObjectResponse;
 
+
 public class S3Copy {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String sourceBucketName;       // Source bucket name
         String sourceKey;              // Source key
         String destinationBucketName;  // Destination bucket name
         String destinationKey;         // Destination key
 
         if (args.length < 3) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3copy.jar <SOURCE_BUCKET> <SOURCE_OBJECT> <DESTINATION_BUCKET>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3copy.jar " +
+                    "<SOURCE_BUCKET> <SOURCE_OBJECT> <DESTINATION_BUCKET>");
             System.exit(1);
         }
 

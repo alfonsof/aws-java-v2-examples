@@ -7,7 +7,6 @@
 
 package example;
 
-import java.io.IOException;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.regions.Region;
@@ -15,13 +14,15 @@ import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.DeleteBucketRequest;
 
+
 public class S3Delete {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         if (args.length < 1) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3delete.jar <BUCKET_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3delete.jar <BUCKET_NAME>");
             System.exit(1);
         }
 
@@ -37,10 +38,13 @@ public class S3Delete {
 
         try {
             System.out.println("Deleting bucket ...");
+
             // Delete bucket
             DeleteBucketRequest deleteBucketRequest = DeleteBucketRequest.builder().bucket(bucketName).build();
             s3client.deleteBucket(deleteBucketRequest);
+            
             System.out.println("Deleted");
+
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
                 System.out.println("Error: Bucket does not exist!!");

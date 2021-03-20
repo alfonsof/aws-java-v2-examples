@@ -9,7 +9,6 @@
 
 package example;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.net.URLEncoder;
@@ -25,17 +24,20 @@ import software.amazon.awssdk.services.s3.model.ObjectIdentifier;
 import software.amazon.awssdk.services.s3.model.DeleteObjectsRequest;
 import software.amazon.awssdk.services.s3.model.Delete;
 
+
 public class S3Move {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String sourceBucketName;       // Source bucket name
         String sourceKey;              // Source key
         String destinationBucketName;  // Destination bucket name
         String destinationKey;         // Destination key
 
         if (args.length < 3) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3move.jar <SOURCE_BUCKET> <SOURCE_OBJECT> <DESTINATION_BUCKET>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3move.jar " +
+                    "<SOURCE_BUCKET> <SOURCE_OBJECT> <DESTINATION_BUCKET>");
             System.exit(1);
         }
 

@@ -8,7 +8,6 @@
 
 package example;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
@@ -19,13 +18,16 @@ import software.amazon.awssdk.services.s3.model.Delete;
 import software.amazon.awssdk.services.s3.model.ObjectIdentifier;
 import software.amazon.awssdk.services.s3.model.DeleteObjectsRequest;
 
+
 public class S3DeleteObject {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         if (args.length < 2) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3deleteobject.jar <BUCKET_NAME> <OBJECT_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3deleteobject.jar " +
+                    "<BUCKET_NAME> <OBJECT_NAME>");
             System.exit(1);
         }
 
@@ -45,6 +47,7 @@ public class S3DeleteObject {
 
         try {
             System.out.println("Deleting object ...");
+
             ArrayList<ObjectIdentifier> toDelete = new ArrayList<ObjectIdentifier>();
             toDelete.add(ObjectIdentifier.builder().key(keyName).build());
 
@@ -54,7 +57,9 @@ public class S3DeleteObject {
                     .delete(Delete.builder().objects(toDelete).build())
                     .build();
             s3client.deleteObjects(delReq);
+
             System.out.println("Deleted");
+            
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
                 System.out.println("Error: Bucket does not exist!!");

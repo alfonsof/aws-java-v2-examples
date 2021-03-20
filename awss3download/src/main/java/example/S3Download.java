@@ -22,16 +22,19 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 
+
 public class S3Download {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String bucketName;            // Source bucket name
         String keyName;               // Key name, it is the object name
         String localFileName;         // Local file name
 
         if (args.length < 3) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3download.jar <BUCKET_NAME> <OBJECT_NAME> <LOCAL_FILE_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3download.jar " +
+                    "<BUCKET_NAME> <OBJECT_NAME> <LOCAL_FILE_NAME>");
             System.exit(1);
         }
 
@@ -66,8 +69,11 @@ public class S3Download {
             OutputStream os = new FileOutputStream(myFile);
             os.write(data);
             os.close();
+
             System.out.println("Downloaded");
 
+        } catch (IOException ee) {
+            System.err.println(ee.getMessage());
         } catch (S3Exception e) {
             if (e.statusCode() == 404) {
                 System.out.println("Error: Bucket/Object \"" + bucketName + "/" + keyName + "\" does not exist!!");

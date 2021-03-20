@@ -23,16 +23,19 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectResponse;
 
+
 public class S3Upload {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String bucketName;              // Bucket name
         String keyName;                 // Key name, it is the object name
         String localFileName;           // Upload local file name
 
         if (args.length < 3) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3upload.jar <BUCKET_NAME> <OBJECT_NAME> <LOCAL_FILE_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3upload.jar " +
+                    "<BUCKET_NAME> <OBJECT_NAME> <LOCAL_FILE_NAME>");
             System.exit(1);
         }
 
@@ -67,8 +70,10 @@ public class S3Upload {
 
                 PutObjectResponse response = s3client.putObject(putOb,
                         RequestBody.fromBytes(getObjectFile(localFileName)));
+
                 System.out.println("Uploaded");
                 System.out.println("Tag information: " + response.eTag());
+
             } else {
                 System.out.printf("Error: Local file \"%s\" does NOT exist.", localFileName);
             }

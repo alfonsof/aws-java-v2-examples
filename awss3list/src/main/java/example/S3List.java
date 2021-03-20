@@ -7,7 +7,6 @@
 
 package example;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.ListIterator;
 import software.amazon.awssdk.core.exception.SdkException;
@@ -19,15 +18,17 @@ import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
 import software.amazon.awssdk.services.s3.model.ListObjectsResponse;
 import software.amazon.awssdk.services.s3.model.S3Object;
 
+
 public class S3List {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         String bucketName;  // Bucket name
 
         if (args.length < 1) {
-            System.out.println("Not enough parameters.\nProper Usage is: java -jar s3list.jar <BUCKET_NAME>");
+            System.out.println("Not enough parameters.\n" +
+                    "Proper Usage is: java -jar s3list.jar <BUCKET_NAME>");
             System.exit(1);
         }
 
@@ -43,6 +44,7 @@ public class S3List {
 
         try {
             System.out.println("Listing objects ...");
+            
             ListObjectsRequest listObjects = ListObjectsRequest
                     .builder()
                     .bucket(bucketName)
@@ -57,6 +59,7 @@ public class S3List {
                         " (size = " + myValue.size() + " bytes)" +
                         " (owner = " + myValue.owner());
             }
+
             System.out.println("Listed");
 
         } catch (S3Exception e) {

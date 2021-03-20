@@ -5,7 +5,6 @@
 
 package example;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.ListIterator;
 import software.amazon.awssdk.core.exception.SdkException;
@@ -20,10 +19,11 @@ import software.amazon.awssdk.services.s3.model.Bucket;
 import software.amazon.awssdk.services.s3.model.ListObjectsResponse;
 import software.amazon.awssdk.services.s3.model.S3Object;
 
+
 public class S3ListAll {
     private static final Region REGION = Region.of("eu-west-1");      // Region name
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         // Instantiates a client
         S3Client s3client = S3Client.builder()
@@ -32,6 +32,7 @@ public class S3ListAll {
 
         try {
             System.out.println("Listing S3 buckets and objects ...");
+
             // List Buckets
             ListBucketsRequest listBucketsRequest = ListBucketsRequest.builder().build();
             ListBucketsResponse listBucketsResponse = s3client.listBuckets(listBucketsRequest);
@@ -55,7 +56,9 @@ public class S3ListAll {
                             " (owner = " + myValue.owner());
                 }
             }
+
             System.out.println("Listed");
+            
         } catch (S3Exception e) {
             System.out.println("S3Exception: " + e);
             System.out.println("HTTP Status Code:  " + e.statusCode());
