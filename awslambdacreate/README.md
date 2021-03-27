@@ -88,9 +88,7 @@ Create an AWS Lambda function.
 
 * Test the application.
 
-  The Lambda function is created and you should see the message:
+  The Lambda function is created and you should see the messages:
   
-  ```bash
-  Creating Lambda function ...
-  Created
-  ```
+  * `Creating Lambda function ...`
+  * `Created`

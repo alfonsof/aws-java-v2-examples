@@ -104,7 +104,6 @@ Invoke an AWS Lambda function.
 
   For example:
 
-  * `Lambda function name: arn:aws:lambda:eu-west-1:123456789012:function:HelloJsonJava`
   * `Lambda return value: {"greetings":"Hello Peter Parker."}`
   * `Lambda status code: 200`
 

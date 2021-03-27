@@ -91,4 +91,7 @@ Delete an AWS Lambda function.
 
 * Test the application.
 
-  The Lambda function is deleted and you should see the message "The Lambda function is deleted".
+  The Lambda function is deleted and you should see the messages:
+  
+  * `Deleting Lambda function ...`
+  * `Deleted`
