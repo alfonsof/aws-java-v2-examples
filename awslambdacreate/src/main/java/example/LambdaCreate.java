@@ -3,9 +3,9 @@
  * Create a Lambda function.
  * You must provide 1 parameter:
  * FUNCTION_NAME      = Lambda function name
- * FUNCTION_FILE      = The path to the JAR or ZIP firl where the code of the Lambda function is located
+ * FUNCTION_FILE      = The path to the JAR or ZIP file where the code of the Lambda function is located
  * FUNCTION_ROLE      = The role ARN that has Lambda permissions
- * FUNCTION_HANDLER   = The fully qualifed method name (Ex: example.Handler::handleRequest)
+ * FUNCTION_HANDLER   = The fully qualified method name (Ex: example.Handler::handleRequest)
  */
 
 package example;
