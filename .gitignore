@@ -20,7 +20,10 @@ out/
 .project
 .settings/
 
-# Package Files #
+# Visual Studio Code
+.vscode/
+
+# Package Files
 *.jar
 *.war
 *.ear
