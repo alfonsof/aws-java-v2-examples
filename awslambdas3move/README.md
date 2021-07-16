@@ -88,11 +88,9 @@ It handles an AWS Lambda function that moves an object when it appears in a S3 b
   * Runtime: `Java 8`
   * Handler: `example.S3MoveHandler::handleRequest`
   * Role: `Role-my-buckets`
-  * The triggers:
-    * `S3`
-      * Bucket: `<SOURCE_BUCKET_NAME>`
-      * Event type: `ObjectCreated`
-      * Enable trigger: `Yes`
+  * Runtime Settings for the lambda function:
+    * Memory (MB): `1024`
+    * Timeout: `10 sec`
   * The resources that the function's role has access to:
     * `Amazon CloudWatch`
     * `Amazon CloudWatch Logs`
@@ -101,9 +99,11 @@ It handles an AWS Lambda function that moves an object when it appears in a S3 b
         * `s3:GetObject` --> `Allow: arn:aws:s3:::sourcebucket/*`
         * `s3:DeleteObject` --> `Allow: arn:aws:s3:::sourcebucket/*`
         * `s3:PutObject` --> `Allow: arn:aws:s3:::targetbucket/*`
-  * Basic Settings for the lambda function:
-    * Memory (MB): `1024`
-    * Timeout: `10 sec`
+  * The triggers:
+    * `S3`
+      * Bucket: `<SOURCE_BUCKET_NAME>`
+      * Event type: `ObjectCreated`
+      * Enable trigger: `Yes`
 
 * Create the AWS Lambda environment variable `TARGET_BUCKET` and set its value to the name of your target bucket.
 

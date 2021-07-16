@@ -26,13 +26,13 @@ It handles a simple AWS Lambda function that shows the content (text) of the cal
   * Runtime: `Java 8`
   * Handler: `example.Hello::myHandler`
   * Role: `lambda-basic-execution`
-  * The triggers:
-    * `Nothing`
-  * The resources that the function's role has access to:
-    * `Amazon CloudWatch Logs`
-  * Basic Settings for the lambda function:
+  * Runtime Settings for the lambda function:
     * Memory (MB): `512`
     * Timeout: `15 sec`
+  * The resources that the function's role has access to:
+    * `Amazon CloudWatch Logs`
+  * The triggers:
+    * `Nothing`
 
 * Upload the Java JAR file.
 

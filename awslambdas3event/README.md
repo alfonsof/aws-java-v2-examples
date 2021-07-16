@@ -27,16 +27,16 @@ It handles an AWS Lambda function that sends information to the log about an obj
   * Runtime: `Java 8`
   * Handler: `example.S3EventHandler::handleRequest`
   * Role: `lambda-basic-execution`
+  * Runtime Settings for the lambda function:
+    * Memory (MB): `512`
+    * Timeout: `15 sec`
+  * The resources that the function's role has access to:
+    * `Amazon CloudWatch Logs`
   * The triggers:
     * `S3`
       * Bucket: `<BUCKET_NAME>`
       * Event type: `ObjectCreated`
       * Enable trigger: `Yes`
-  * The resources that the function's role has access to:
-    * `Amazon CloudWatch Logs`
-  * Basic Settings for the lambda function:
-    * Memory (MB): `512`
-    * Timeout: `15 sec`
 
 * Upload the Java JAR file.
 
