@@ -24,40 +24,42 @@ Copy an object from a S3 bucket to another S3 bucket.
 
   Setting your credentials for use by the AWS SDK for Java can be done in a number of ways, but here are the recommended approaches:
 
-  * The default credential profiles file
+  * The default credential profiles file.
   
     Set credentials in the AWS credentials profile file on your local system, located at:
 
-    `~/.aws/credentials` on Linux, macOS, or Unix
+    * `~/.aws/credentials` on Linux, macOS, or Unix.
 
-    `C:\Users\USERNAME\.aws\credentials` on Windows
+    * `C:\Users\USERNAME\.aws\credentials` on Windows.
 
     This file should contain lines in the following format:
 
     ```bash
     [default]
-    aws_access_key_id = <your_access_key_id>
-    aws_secret_access_key = <your_secret_access_key>
+    aws_access_key_id = <YOUR_ACCESS_KEY_ID>
+    aws_secret_access_key = <YOUR_SECRET_ACCESS_KEY>
     ```
-    Substitute your own AWS credentials values for the values `<your_access_key_id>` and `<your_secret_access_key>`.
+    Replace the values of `<YOUR_ACCESS_KEY_ID>` and `<YOUR_SECRET_ACCESS_KEY>` by your AWS credentials.
 
-  * Environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+  * Environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
   
     Set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
 
     To set these variables on Linux, macOS, or Unix, use `export`:
 
     ```bash
-    export AWS_ACCESS_KEY_ID=<your_access_key_id>
-    export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
+    export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
     ```
 
     To set these variables on Windows, use `set`:
 
     ```bash
-    set AWS_ACCESS_KEY_ID=<your_access_key_id>
-    set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    set AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
+    set AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
     ```
+
+    Replace the values of `<YOUR_ACCESS_KEY_ID>` and `<YOUR_SECRET_ACCESS_KEY>` by your AWS credentials.
 
 * You can select the AWS region changing the value of `REGION` variable in the code.
 
@@ -67,16 +69,16 @@ Copy an object from a S3 bucket to another S3 bucket.
 
 * Run the code.
 
-  You must provide 3 parameters:
+  You must provide 3 parameters, replace the values of:
   
-  * `<SOURCE_BUCKET>`      = Source bucket name
-  * `<SOURCE_OBJECT>`      = Source object name
-  * `<DESTINATION_BUCKET>` = Destination bucket name
+  * `<SOURCE_BUCKET>`      by source bucket name.
+  * `<SOURCE_OBJECT>`      by source object name.
+  * `<DESTINATION_BUCKET>` by destination bucket name.
 
   Run application:
 
   ```bash
-  java -jar awss3copy.jar source-bucket source-object destination-bucket
+  java -jar awss3copy.jar <SOURCE_BUCKET> <SOURCE_OBJECT> <DESTINATION_BUCKET>
   ```
 
 * Test the application.
